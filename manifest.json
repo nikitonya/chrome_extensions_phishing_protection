@@ -5,7 +5,7 @@
     "manifest_version": 3,
     "icons": {},
     "action": {
-        "default_popup":"index.html"
+        "default_popup":"popup.html"
     },
     "permissions": ["scripting", "activeTab"],
     "background":{}
