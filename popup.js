@@ -1,4 +1,5 @@
 const grab = document.getElementById("grab");
+
 grab.addEventListener("click", async () => {
     console.log("Button clicked");
     chrome.tabs.query({active: true, currentWindow: true}, async function(tabs) {

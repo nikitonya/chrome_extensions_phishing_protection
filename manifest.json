@@ -5,8 +5,14 @@
     "manifest_version": 3,
     "icons": {},
     "action": {
-        "default_popup":"popup.html"
+        "default_popup": "popup.html"
     },
-    "permissions": ["scripting", "activeTab"],
-    "background":{}
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
 }
