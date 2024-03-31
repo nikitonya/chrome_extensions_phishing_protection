@@ -1,4 +1,4 @@
-async function postData(url = '', data = {}) {
+const postData = async (url = '', data = {}) => {
     try {
         const response = await fetch(url, {
             method: 'POST',
@@ -13,17 +13,9 @@ async function postData(url = '', data = {}) {
     }
 }
 
-chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+chrome.tabs.onUpdated.addListener(async function (tabId, changeInfo, tab) {
     if (changeInfo.url) {
         console.log(changeInfo.url);
-        postData('http://127.0.0.1:5000/predict', { url: changeInfo.url });
-        
+        await postData('http://127.0.0.1:5000/predict', { url: changeInfo.url });
     }
 });
-
-// chrome.tabs.onActivated.addListener(function (activeInfo) {
-//     chrome.tabs.get(activeInfo.tabId, function (tabInfo) {
-//         console.log(tabInfo.url);
-//         postData('http://127.0.0.1:5000/predict', { url: tabInfo.url });
-//     });
-// });
