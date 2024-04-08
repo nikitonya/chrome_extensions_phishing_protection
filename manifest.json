@@ -10,9 +10,21 @@
     "permissions": [
         "scripting",
         "activeTab",
-        "tabs"
+        "tabs",
+        "notifications"
     ],
     "background": {
-        "service_worker": "background.js"
-    }
+        "service_worker": "background.js",
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
 }
